@@ -37,7 +37,7 @@ def incluir_novo_livro():
     return jsonify(livros)
 
 
-@app.route('livros/')
+@app.route('/livros/<int:id>',methods=['DELETE'])
 def excluir_livro(id):
     for indice, livro in enumerate(livros):
         if livro.get('id') == id:
